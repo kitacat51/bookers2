@@ -31,6 +31,18 @@
                <a class="nav-link text-light" href="/homes/about"><i class="fas fa-link"></i> About</a>
              </li>
              <% if user_signed_in? %>
+             <!--記述途中bookとuserへのリンク-->
+             <li>
+             <% link_to books_show_path,method :get do %>
+             <i class="fas fa-book-open"></i> Books
+             <% end %>
+             </li>
+             <li>
+             <%= link_to destroy_user_session_path, method: :delete do %>
+             <i class="fas fa-sign-out-alt"></i> Log out
+             <% end %>
+             
+             </li>
              <% else %>
              <li>
                <% new_user_registration_path %>
@@ -40,7 +52,8 @@
                <% new_user_session_path %>
                <a class="nav-link text-light" href="/users/sign_in"><i class="fas fa-sign-in-alt"></i> Log in</a>
              </li>
-              <% end %>
+            
+             <% end %>
            </ul>
         </div>
       </div>
