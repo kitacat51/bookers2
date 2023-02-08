@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :books
+  resources :users
  
   devise_for :books
   devise_for :users
