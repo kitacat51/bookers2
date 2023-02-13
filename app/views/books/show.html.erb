@@ -11,10 +11,10 @@
         <tbody>
          <tr>
           <td><%= image_tag @user.get_profile_image(200,200) %><br>
-              <%= link_to user_path(1) do %>
+              <%= link_to user_path(@user.id) do %>
               <%= @user.name %></td>
               <% end %>
-          <td><%= link_to user_path(@user.id) do %>
+          <td><%= link_to book_path(@user.id) do %>
               <%= book.title %>
               <% end %>
           </td>
